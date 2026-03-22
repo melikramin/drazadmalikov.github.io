@@ -1,0 +1,8 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- High Resolution Icon -->
+  <rect width="512" height="512" rx="100" fill="#134195"/>
+  <path d="M256 120V392M140 256H372" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="256" r="20" fill="white"/>
+  <!-- Medical caduceus style decoration -->
+  <path d="M256 180C280 180 300 195 300 215C315 215 325 228 325 245C325 262 315 275 300 275C300 295 280 310 256 310C232 310 212 295 212 275C197 275 187 262 187 245C187 228 197 215 212 215C212 195 232 180 256 180Z" stroke="white" stroke-width="8" opacity="0.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

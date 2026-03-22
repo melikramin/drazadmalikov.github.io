@@ -1,0 +1,8 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Apple Touch Icon - High Resolution -->
+  <rect width="180" height="180" rx="40" fill="#134195"/>
+  <path d="M90 45V135M50 90H130" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="90" cy="90" r="8" fill="white"/>
+  <!-- Subtle brain outline -->
+  <path d="M90 65C98 65 105 70 105 78C110 78 113 82 113 88C113 94 110 98 105 98C105 106 98 111 90 111C82 111 75 106 75 98C70 98 67 94 67 88C67 82 70 78 75 78C75 70 82 65 90 65Z" stroke="white" stroke-width="2" opacity="0.3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

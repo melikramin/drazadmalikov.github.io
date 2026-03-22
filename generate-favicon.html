@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+</head>
+<body>
+    <canvas id="canvas" width="32" height="32"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Background
+        ctx.fillStyle = '#134195';
+        ctx.fillRect(0, 0, 32, 32);
+        
+        // White cross
+        ctx.strokeStyle = '#ffffff';
+        ctx.lineWidth = 3.5;
+        ctx.lineCap = 'round';
+        
+        // Vertical line
+        ctx.beginPath();
+        ctx.moveTo(16, 9);
+        ctx.lineTo(16, 23);
+        ctx.stroke();
+        
+        // Horizontal line
+        ctx.beginPath();
+        ctx.moveTo(10, 16);
+        ctx.lineTo(22, 16);
+        ctx.stroke();
+        
+        // Download
+        canvas.toBlob(function(blob) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'favicon.png';
+            a.click();
+        });
+    </script>
+</body>
+</html>

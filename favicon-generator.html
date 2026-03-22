@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Favicon Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 2px solid #ccc;
+            margin: 20px 0;
+        }
+        button {
+            background: #134195;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background: #0f3478;
+        }
+        .preview {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin: 20px 0;
+        }
+        h1 {
+            color: #134195;
+        }
+        .instructions {
+            background: #e8f4ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dr. Azad Məlikov - Favicon Generator</h1>
+        
+        <div class="instructions">
+            <strong>Instructions:</strong>
+            <ol>
+                <li>Click the buttons below to download each favicon file</li>
+                <li>Save them to your website root folder (Azad/)</li>
+                <li>Refresh your browser (Ctrl+F5) to see the favicon</li>
+            </ol>
+        </div>
+
+        <h3>32x32 Favicon</h3>
+        <div class="preview">
+            <canvas id="canvas32" width="32" height="32"></canvas>
+            <button onclick="downloadPNG32()">Download favicon.png (32x32)</button>
+        </div>
+
+        <h3>16x16 Favicon (ICO)</h3>
+        <div class="preview">
+            <canvas id="canvas16" width="16" height="16"></canvas>
+            <button onclick="downloadICO()">Download favicon.ico (16x16)</button>
+        </div>
+
+        <h3>180x180 Apple Touch Icon</h3>
+        <div class="preview">
+            <canvas id="canvas180" width="180" height="180"></canvas>
+            <button onclick="downloadApple()">Download apple-touch-icon.png</button>
+        </div>
+    </div>
+
+    <script>
+        // Draw 32x32 favicon
+        function drawFavicon32() {
+            const canvas = document.getElementById('canvas32');
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#134195';
+            ctx.fillRect(0, 0, 32, 32);
+            
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 3.5;
+            ctx.lineCap = 'round';
+            
+            ctx.beginPath();
+            ctx.moveTo(16, 9);
+            ctx.lineTo(16, 23);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(10, 16);
+            ctx.lineTo(22, 16);
+            ctx.stroke();
+        }
+
+        // Draw 16x16 favicon (ICO)
+        function drawFavicon16() {
+            const canvas = document.getElementById('canvas16');
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#134195';
+            ctx.fillRect(0, 0, 16, 16);
+            
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            
+            ctx.beginPath();
+            ctx.moveTo(8, 4);
+            ctx.lineTo(8, 12);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(4, 8);
+            ctx.lineTo(12, 8);
+            ctx.stroke();
+        }
+
+        // Draw 180x180 Apple Touch Icon
+        function drawAppleTouchIcon() {
+            const canvas = document.getElementById('canvas180');
+            const ctx = canvas.getContext('2d');
+            
+            // Rounded rect background
+            ctx.fillStyle = '#134195';
+            roundRect(ctx, 0, 0, 180, 180, 35);
+            ctx.fill();
+            
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 14;
+            ctx.lineCap = 'round';
+            
+            ctx.beginPath();
+            ctx.moveTo(90, 50);
+            ctx.lineTo(90, 130);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(50, 90);
+            ctx.lineTo(130, 90);
+            ctx.stroke();
+            
+            // Add subtle medical symbol
+            ctx.globalAlpha = 0.2;
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(90, 90, 60, 0, Math.PI * 2);
+            ctx.stroke();
+        }
+
+        function roundRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        function downloadPNG32() {
+            const canvas = document.getElementById('canvas32');
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'favicon.png';
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        function downloadICO() {
+            const canvas = document.getElementById('canvas16');
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'favicon.ico';
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        function downloadApple() {
+            const canvas = document.getElementById('canvas180');
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'apple-touch-icon.png';
+                a.click();
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        // Draw on page load
+        window.onload = function() {
+            drawFavicon32();
+            drawFavicon16();
+            drawAppleTouchIcon();
+        };
+    </script>
+</body>
+</html>

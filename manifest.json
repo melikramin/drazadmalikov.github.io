@@ -1,0 +1,36 @@
+{
+  "name": "Dr. Azad Məlikov — Uzman Neyrocərrah",
+  "short_name": "Dr. Azad Məlikov",
+  "description": "20 illik təcrübəyə malik uzman neyrocərrah. Beyin, onurğa və sinir sistemi əməliyyatları. Bakı, Azərbaycan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#134195",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["health", "medical", "neurosurgery"],
+  "lang": "az",
+  "dir": "ltr",
+  "scope": "/",
+  "related_applications": [],
+  "prefer_related_applications": false
+}

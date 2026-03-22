@@ -1,0 +1,22 @@
+/* TEAM */
+Doctor: Dr. Azad Məlikov
+Title: Uzman Neyrocərrah və Nevropatoloq
+Contact: drazadmalikov@gmail.com
+Location: Bakı, Azərbaycan
+
+Designer: Nicat Çələbi
+Website: drazadmalikov.az
+
+/* SITE */
+Last update: 2026/02/11
+Language: Azərbaycan dili / Azerbaijani
+Doctype: HTML5
+IDE: Cursor
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: Responsive Design, SEO Optimized
+Software: VSCode, Git
+
+/* THANKS */
+Font families: Work Sans, Sora, Nunito Sans, Inter
+Icons: Custom SVG
+Hosting: TBD

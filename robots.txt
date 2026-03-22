@@ -1,0 +1,15 @@
+# robots.txt for drazadmalikov.az
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private directories (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://drazadmalikov.az/sitemap.xml
+
+# Crawl-delay (optional, for rate limiting)
+Crawl-delay: 1
